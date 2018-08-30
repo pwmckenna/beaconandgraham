@@ -4,23 +4,23 @@ const Row = ({ children }) => (
     <div style={{
         display: 'flex',
         flex: 1,
-        border: '10px solid #eee',
-        margin: '1em',
-        alignItems: 'center'
+        border: '1em solid #eee',
+        margin: '1em 2em'
     }}>
         {children}
     </div>
 );
 
-const Image = props => (
-    <img {...props} style={{ width: '100%' }}/>
+const Image = ({ style = {}, ...props }) => (
+    <img {...props} style={{ maxWidth: '100%', height: 'auto', ...style }}/>
 );
 
 export default () => (
     <div style={{
         display: 'flex',
         flexDirection: 'column',
-        width: '100%'
+        width: '100%',
+        margin: '1em 0'
     }}>
         <Row>
             <Image src={require('./IMG_4148.JPG')}/>
@@ -50,8 +50,8 @@ export default () => (
             <Image src={require('./IMG_4016.JPG')}/>
         </Row>
         <Row>
-            <Image src={require('./IMG_3992.JPG')}/>
-            <Image src={require('./IMG_3991.JPG')}/>
+            <Image src={require('./IMG_3992.JPG')} style={{ width: '50%' }}/>
+            <Image src={require('./IMG_3991.JPG')} style={{ width: '50%' }}/>
         </Row>
     </div>
 )
